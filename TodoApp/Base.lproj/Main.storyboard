@@ -39,26 +39,27 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="43I-hh-P0K">
-                                <rect key="frame" x="-4" y="20" width="308" height="484"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="43I-hh-P0K">
+                                <rect key="frame" x="-4" y="20" width="308" height="319"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addBtn" translatesAutoresizingMaskIntoConstraints="NO" id="K1Y-er-DXT">
-                                <rect key="frame" x="224" y="404" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDU-bd-hMs">
+                                <rect key="frame" x="208" y="433" width="45" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="BOz-TW-OaN"/>
-                                    <constraint firstAttribute="height" constant="80" id="WmK-Ws-ZEW"/>
+                                    <constraint firstAttribute="height" constant="80" id="Cwh-eM-lTu"/>
+                                    <constraint firstAttribute="width" constant="80" id="w0G-0b-sVj"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="addBtn"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="43I-hh-P0K" secondAttribute="bottom" id="6dr-jX-LWf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K1Y-er-DXT" secondAttribute="bottom" constant="20" id="IfL-EQ-xiN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aDU-bd-hMs" secondAttribute="bottom" constant="20" id="LXe-3j-NiU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="43I-hh-P0K" secondAttribute="leading" constant="20" id="Rp4-2f-XhH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="43I-hh-P0K" secondAttribute="trailing" id="Sn3-99-c8y"/>
                             <constraint firstItem="43I-hh-P0K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="d2q-y3-NCF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K1Y-er-DXT" secondAttribute="trailing" id="nhU-10-IDJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aDU-bd-hMs" secondAttribute="trailing" id="wsF-qJ-h0U"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="-135.38230884557723"/>
+            <point key="canvasLocation" x="37.5" y="-136.26760563380282"/>
         </scene>
     </scenes>
     <resources>
