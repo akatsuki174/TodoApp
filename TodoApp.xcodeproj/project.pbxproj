@@ -15,6 +15,7 @@
 		2CDABCE71EBD787D00719D72 /* CategoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */; };
 		2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */; };
 		2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCEA1EBD864F00719D72 /* AddNewCategoryViewController.swift */; };
+		2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListCell.xib; sourceTree = "<group>"; };
 		2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		2CDABCEA1EBD864F00719D72 /* AddNewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCategoryViewController.swift; sourceTree = "<group>"; };
+		2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RegularAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */,
 				2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */,
 				2CDABCEA1EBD864F00719D72 /* AddNewCategoryViewController.swift */,
+				2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */,
 				2CDABCD81EBC1BE300719D72 /* Main.storyboard */,
 				2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */,
 				2CDABCDD1EBC1BE300719D72 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */,
 				2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */,
 				2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */,
 				2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */,

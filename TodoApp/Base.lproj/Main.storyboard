@@ -139,6 +139,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryNameLabel" destination="Lcr-hc-2Ya" id="fU9-bK-d1p"/>
+                        <outlet property="categoryNameTextField" destination="2ai-0f-D0o" id="CHB-Bb-P5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIg-X5-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
