@@ -51,7 +51,6 @@
                                 </constraints>
                                 <state key="normal" image="addBtn"/>
                                 <connections>
-                                    <action selector="tappedAddBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="baM-dK-ynd"/>
                                     <segue destination="rQf-3V-pxL" kind="presentation" identifier="tappedAddBtn" id="TY0-6Z-oUa"/>
                                 </connections>
                             </button>

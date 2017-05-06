@@ -33,12 +33,6 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - IBAction
-    
-    @IBAction func tappedAddBtn(_ sender: Any) {
-        //self.performSegue(withIdentifier: "tappedAddBtn", sender: self)
-    }
-    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
