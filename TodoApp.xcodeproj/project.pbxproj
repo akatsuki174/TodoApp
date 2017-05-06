@@ -12,6 +12,8 @@
 		2CDABCDA1EBC1BE300719D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCD81EBC1BE300719D72 /* Main.storyboard */; };
 		2CDABCDC1EBC1BE300719D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */; };
 		2CDABCDF1EBC1BE300719D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCDD1EBC1BE300719D72 /* LaunchScreen.storyboard */; };
+		2CDABCE71EBD787D00719D72 /* CategoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */; };
+		2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CDABCDE1EBC1BE300719D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CDABCE01EBC1BE300719D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListCell.xib; sourceTree = "<group>"; };
+		2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */,
 				2CDABCD61EBC1BE300719D72 /* CategoryListViewController.swift */,
+				2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */,
+				2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */,
 				2CDABCD81EBC1BE300719D72 /* Main.storyboard */,
 				2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */,
 				2CDABCDD1EBC1BE300719D72 /* LaunchScreen.storyboard */,
@@ -127,6 +133,7 @@
 				2CDABCDF1EBC1BE300719D72 /* LaunchScreen.storyboard in Resources */,
 				2CDABCDC1EBC1BE300719D72 /* Assets.xcassets in Resources */,
 				2CDABCDA1EBC1BE300719D72 /* Main.storyboard in Resources */,
+				2CDABCE71EBD787D00719D72 /* CategoryListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */,
 				2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */,
 				2CDABCD51EBC1BE300719D72 /* AppDelegate.swift in Sources */,
 			);

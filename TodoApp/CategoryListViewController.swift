@@ -18,6 +18,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellReuseIdentifier: "CategoryListCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,9 +40,9 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        
-        cell.textLabel?.text = "カテゴリなし"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as! CategoryListCell
+        cell.nameLabel.text = "カテゴリなし"
+        cell.numLabel.text = "1"
         return cell
     }
     
