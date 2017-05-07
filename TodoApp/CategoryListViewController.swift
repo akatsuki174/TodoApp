@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CategoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var todoCategories:Results<TodoCategory>?{
+        do {
+            let realm = try Realm()
+            return realm.objects(TodoCategory.self)
+        } catch {
+            // TODO: エラー処理
+        }
+        return nil
+    }
     
     // MARK: - Life Cycle
     
@@ -23,12 +33,13 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
         // カテゴリ一覧ページに戻ってきた時にハイライト解除
         if let selectedRow = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRow, animated: true)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -36,13 +47,16 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return todoCategories?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as! CategoryListCell
-        cell.nameLabel.text = "カテゴリなし"
-        cell.numLabel.text = "1"
+        let todoCategory = todoCategories?[indexPath.row]
+        if let category = todoCategory {
+            cell.nameLabel.text = category.name
+            cell.numLabel.text = String(describing: category.itemNum)
+        }
         return cell
     }
     
