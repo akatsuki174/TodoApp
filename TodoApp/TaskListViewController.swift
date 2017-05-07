@@ -1,5 +1,5 @@
 //
-//  ItemListViewController.swift
+//  TaskListViewController.swift
 //  TodoApp
 //
 //  Created by akatsuki174 on 2017/05/07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     // MARK: - Life Cycle

@@ -12,7 +12,7 @@ import RealmSwift
 class TodoCategory: Object {
     
     dynamic var name: String = ""
-    dynamic var itemNum: Int = 0
+    dynamic var taskNum: Int = 0
     
     // カテゴリ名の重複を許さない仕様なのでnameを主キーに設定
     override static func primaryKey() -> String? {

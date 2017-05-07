@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="37.5" y="-136.26760563380282"/>
         </scene>
-        <!--Item List View Controller-->
+        <!--Task List View Controller-->
         <scene sceneID="e2v-h8-Wo6">
             <objects>
-                <viewController id="dgw-mn-CwM" customClass="ItemListViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dgw-mn-CwM" customClass="TaskListViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pxz-Fd-OeI"/>
                         <viewControllerLayoutGuide type="bottom" id="meP-16-Zfg"/>
