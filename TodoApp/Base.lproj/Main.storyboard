@@ -101,6 +101,9 @@
                                     <constraint firstAttribute="width" constant="80" id="xfs-8Z-6kU"/>
                                 </constraints>
                                 <state key="normal" image="addBtn"/>
+                                <connections>
+                                    <segue destination="nWD-yo-OzE" kind="presentation" id="D6z-vi-4Fu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +117,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="uib-iD-aRF"/>
+                    <navigationItem key="navigationItem" id="bmy-4y-qF5"/>
                     <connections>
                         <outlet property="tableView" destination="DbG-Tr-kbH" id="N5P-cq-YIW"/>
                     </connections>
@@ -122,6 +125,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzk-tq-qva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="871.875" y="-323.23943661971833"/>
+        </scene>
+        <!--新規タスク-->
+        <scene sceneID="dEz-gy-B5g">
+            <objects>
+                <viewController id="q8V-IX-GVq" customClass="AddNewTaskViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9pD-J9-Veo"/>
+                        <viewControllerLayoutGuide type="bottom" id="V8i-nR-LH3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9EZ-8M-bls">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7A-7H-eyz">
+                                <rect key="frame" x="36" y="84" width="84.5" height="16"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="タイトル ">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="＊">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Lx-PD-ndR">
+                                <rect key="frame" x="36" y="110" width="218" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メモ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUm-Cg-uXN">
+                                <rect key="frame" x="36" y="160" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-WQ-xVE">
+                                <rect key="frame" x="36" y="191" width="248" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="13q-Kg-SKy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-fv-5xb">
+                                <rect key="frame" x="36" y="311" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-cv-r74">
+                                <rect key="frame" x="36" y="342" width="218" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EBo-cv-r74" firstAttribute="leading" secondItem="Xim-fv-5xb" secondAttribute="leading" id="0cM-e2-ssx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Lx-PD-ndR" secondAttribute="trailing" constant="50" id="0mS-kE-D2g"/>
+                            <constraint firstItem="r7A-7H-eyz" firstAttribute="top" secondItem="9pD-J9-Veo" secondAttribute="bottom" constant="20" id="631-Ay-hkg"/>
+                            <constraint firstItem="7Lx-PD-ndR" firstAttribute="top" secondItem="r7A-7H-eyz" secondAttribute="bottom" constant="10" id="732-Xh-fDj"/>
+                            <constraint firstItem="EBo-cv-r74" firstAttribute="top" secondItem="Xim-fv-5xb" secondAttribute="bottom" constant="10" id="8Fq-ab-hfz"/>
+                            <constraint firstItem="Xim-fv-5xb" firstAttribute="top" secondItem="wgH-WQ-xVE" secondAttribute="bottom" constant="20" id="8Ze-HF-XE4"/>
+                            <constraint firstItem="r7A-7H-eyz" firstAttribute="leading" secondItem="9EZ-8M-bls" secondAttribute="leadingMargin" constant="20" id="9e7-8g-F9c"/>
+                            <constraint firstItem="hUm-Cg-uXN" firstAttribute="top" secondItem="7Lx-PD-ndR" secondAttribute="bottom" constant="20" id="Dth-3W-SKa"/>
+                            <constraint firstItem="hUm-Cg-uXN" firstAttribute="leading" secondItem="7Lx-PD-ndR" secondAttribute="leading" id="M3C-OE-mwe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wgH-WQ-xVE" secondAttribute="trailing" constant="20" id="QU5-e5-vi0"/>
+                            <constraint firstItem="7Lx-PD-ndR" firstAttribute="leading" secondItem="r7A-7H-eyz" secondAttribute="leading" id="dpC-0w-vWf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EBo-cv-r74" secondAttribute="trailing" constant="50" id="fAx-7U-rF8"/>
+                            <constraint firstItem="Xim-fv-5xb" firstAttribute="leading" secondItem="wgH-WQ-xVE" secondAttribute="leading" id="oAM-ml-3i4"/>
+                            <constraint firstItem="wgH-WQ-xVE" firstAttribute="top" secondItem="hUm-Cg-uXN" secondAttribute="bottom" constant="10" id="tlz-SY-y01"/>
+                            <constraint firstItem="wgH-WQ-xVE" firstAttribute="leading" secondItem="hUm-Cg-uXN" secondAttribute="leading" id="v8F-HG-Qlk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="新規タスク" id="oWn-W9-eia">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BbI-fW-iHf">
+                            <connections>
+                                <action selector="tappedCloseBtn:" destination="q8V-IX-GVq" id="KCd-ex-3Q0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="追加" id="AEO-oF-ugz">
+                            <connections>
+                                <action selector="tappedAddBtn:" destination="q8V-IX-GVq" id="Hv5-nO-VqR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="memoTextView" destination="wgH-WQ-xVE" id="KdU-EE-Br2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HU3-aA-V4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.875" y="-323.23943661971833"/>
         </scene>
         <!--新規カテゴリ追加-->
         <scene sceneID="Etp-aR-wdY">
@@ -211,6 +327,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAm-zl-z6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="871.875" y="355.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vfH-7d-0iF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nWD-yo-OzE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hip-3o-hED">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q8V-IX-GVq" kind="relationship" relationship="rootViewController" id="FHB-cc-c6Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zu8-QS-ePa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869" y="-323"/>
         </scene>
     </scenes>
     <resources>
