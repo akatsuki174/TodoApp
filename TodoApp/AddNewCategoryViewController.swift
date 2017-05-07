@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddNewCategoryViewController : UIViewController {
     
@@ -35,7 +36,17 @@ class AddNewCategoryViewController : UIViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        // TODO: カテゴリ追加処理
+        let todoCategory = TodoCategory()
+        todoCategory.name = categoryName
+        
+        do {
+            let realm = try Realm()
+            try realm.write{
+                realm.add(todoCategory)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
