@@ -28,7 +28,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellReuseIdentifier: "CategoryListCell")
+        tableView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellReuseIdentifier: "CategoryListCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +63,14 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        performSegue(withIdentifier: "tappedCategory",sender: self)
+    }
+    
+    // MARK: - 
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "tappedCategory") {
+        }
     }
 
 }

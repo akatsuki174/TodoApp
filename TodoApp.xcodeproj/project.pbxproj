@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */; };
+		2CDA350B1EBF016D00C8655B /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA350A1EBF016D00C8655B /* ItemListViewController.swift */; };
 		2CDABCD51EBC1BE300719D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */; };
 		2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCD61EBC1BE300719D72 /* CategoryListViewController.swift */; };
 		2CDABCDA1EBC1BE300719D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDABCD81EBC1BE300719D72 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
+		2CDA350A1EBF016D00C8655B /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		2CDABCD11EBC1BE300719D72 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDABCD61EBC1BE300719D72 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				2CDABCEA1EBD864F00719D72 /* AddNewCategoryViewController.swift */,
 				2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */,
 				2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */,
+				2CDA350A1EBF016D00C8655B /* ItemListViewController.swift */,
 				2CDABCD81EBC1BE300719D72 /* Main.storyboard */,
 				2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */,
 				2CDABCDD1EBC1BE300719D72 /* LaunchScreen.storyboard */,
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */,
+				2CDA350B1EBF016D00C8655B /* ItemListViewController.swift in Sources */,
 				2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */,
 				2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */,
 				2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */,
