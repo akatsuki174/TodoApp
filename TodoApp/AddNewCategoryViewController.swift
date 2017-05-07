@@ -31,11 +31,12 @@ class AddNewCategoryViewController : UIViewController {
     }
     
     @IBAction func tappedAddBtn(_ sender: Any) {
-        guard let categoryName = categoryNameTextField.text, !categoryName.isEmpty else {
-            let alert = UIAlertController.singleBtnAler(title: "", message: "カテゴリ名を入力して下さい", completion: nil)
-            self.present(alert, animated: true, completion: nil)
+        
+        if !isValidCategory() {
             return
         }
+        let categoryName = categoryNameTextField.text!
+
         let todoCategory = TodoCategory()
         todoCategory.name = categoryName
         
@@ -49,6 +50,23 @@ class AddNewCategoryViewController : UIViewController {
         }
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - 
+    
+    private func isValidCategory() -> Bool {
+        guard let categoryName = categoryNameTextField.text, !categoryName.isEmpty else {
+            let alert = UIAlertController.singleBtnAler(title: "", message: "カテゴリ名を入力して下さい", completion: nil)
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        let category = try! Realm().objects(TodoCategory.self).filter("name == %@", categoryName)
+        if category.count > 0 {
+            let alert = UIAlertController.singleBtnAler(title: "", message: "既に同じ名前のカテゴリがあります", completion: nil)
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
     
 }
