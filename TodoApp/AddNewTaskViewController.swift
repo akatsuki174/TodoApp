@@ -40,11 +40,11 @@ class AddNewTaskViewController : UIViewController {
     
     // MARK: - UIPickerView
     
-    func tappedOK(){
+    @objc private func tappedOK(){
         limitDateTextField.resignFirstResponder()
     }
     
-    func tappedNotSet(){
+    @objc private func tappedNotSet(){
         limitDateTextField.text = ""
         limitDateTextField.resignFirstResponder()
     }
@@ -63,7 +63,7 @@ class AddNewTaskViewController : UIViewController {
         limitDateTextField.inputAccessoryView = toolBar
     }
     
-    func datePickerValueChanged(_ sender: UIDatePicker) {
+    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "yyyy/MM/dd";
         limitDateTextField.text = dateFormatter.string(from: sender.date)
