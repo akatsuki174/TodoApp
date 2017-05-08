@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */; };
 		2CBE4D861EBF30F900DF19E3 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D851EBF30F900DF19E3 /* AddNewTaskViewController.swift */; };
+		2CBE4D891EC0308300DF19E3 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */; };
+		2CBE4D8A1EC0308300DF19E3 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */; };
 		2CDA350B1EBF016D00C8655B /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA350A1EBF016D00C8655B /* TaskListViewController.swift */; };
 		2CDABCD51EBC1BE300719D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */; };
 		2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCD61EBC1BE300719D72 /* CategoryListViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
 		2CBE4D851EBF30F900DF19E3 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		2CDA350A1EBF016D00C8655B /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		2CDABCD11EBC1BE300719D72 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			children = (
 				2CDABCE81EBD7DE000719D72 /* CategoryListCell.swift */,
 				2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */,
+				2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */,
+				2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				2CDABCDC1EBC1BE300719D72 /* Assets.xcassets in Resources */,
 				2CDABCDA1EBC1BE300719D72 /* Main.storyboard in Resources */,
 				2CDABCE71EBD787D00719D72 /* CategoryListCell.xib in Resources */,
+				2CBE4D8A1EC0308300DF19E3 /* TaskListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */,
+				2CBE4D891EC0308300DF19E3 /* TaskListCell.swift in Sources */,
 				2CDA350B1EBF016D00C8655B /* TaskListViewController.swift in Sources */,
 				2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */,
 				2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */,
