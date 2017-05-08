@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIAlertController {
-    class func singleBtnAler(title: String, message: String, completion: (() -> Void)?) -> UIAlertController {
+    class func singleBtnAlert(title: String, message: String, completion: (() -> Void)?) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
             (action:UIAlertAction!) -> Void in
