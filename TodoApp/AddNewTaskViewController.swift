@@ -44,11 +44,17 @@ class AddNewTaskViewController : UIViewController {
         limitDateTextField.resignFirstResponder()
     }
     
+    func tappedNotSet(){
+        limitDateTextField.text = ""
+        limitDateTextField.resignFirstResponder()
+    }
+    
     private func setupPickerView() {
         toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(AddNewTaskViewController.tappedOK))
-        toolBar.items = [toolBarBtn]
+        let okBtn = UIBarButtonItem(title: "設定する", style: .plain, target: self, action: #selector(AddNewTaskViewController.tappedOK))
+        let notSetBtn = UIBarButtonItem(title: "設定しない", style: .plain, target: self, action: #selector(AddNewTaskViewController.tappedNotSet))
+        toolBar.items = [okBtn,notSetBtn]
         
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date
