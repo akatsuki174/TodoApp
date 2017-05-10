@@ -11,12 +11,20 @@ import RealmSwift
 
 class TodoTask: Object {
 
-    dynamic var id: Int = 0
+    dynamic var id: String = UUID().uuidString
     dynamic var name: String = ""
-    dynamic var memo: String? = ""
-    dynamic var category: TodoCategory? = nil
-    dynamic var limitDate: NSDate = NSDate()
+    dynamic var memo: String?
+    dynamic var category: TodoCategory?
+    dynamic var limitDate: NSDate?
     dynamic var createdDate: NSDate = NSDate()
+    
+    convenience init(name: String, memo: String?, category: TodoCategory, limitDate: NSDate?) {
+        self.init()
+        self.name = name
+        self.memo = memo
+        self.category = category
+        self.limitDate = limitDate
+    }
     
     override static func primaryKey() -> String? {
         return "id"
