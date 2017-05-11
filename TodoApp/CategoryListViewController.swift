@@ -12,23 +12,18 @@ import RealmSwift
 class CategoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var todoCategories:Results<TodoCategory>?{
-        do {
-            let realm = try Realm()
-            return realm.objects(TodoCategory.self)
-        } catch {
-            // TODO: エラー処理
-        }
-        return nil
-    }
+    var todoCategories:Results<TodoCategory>?
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellReuseIdentifier: "CategoryListCell")
+        
+        todoCategories = RealmManager.getAllCategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
