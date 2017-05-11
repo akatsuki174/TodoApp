@@ -257,6 +257,7 @@
                     <connections>
                         <outlet property="limitDateTextField" destination="gg7-MP-Hcb" id="9i5-RK-X1O"/>
                         <outlet property="memoTextView" destination="C1L-SM-kYO" id="vMR-z4-Awo"/>
+                        <outlet property="taskNameTextField" destination="bva-D1-f9i" id="Ezi-6d-wnL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU3-aA-V4L" userLabel="First Responder" sceneMemberID="firstResponder"/>

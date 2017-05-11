@@ -10,6 +10,7 @@ import UIKit
 
 class AddNewTaskViewController : UIViewController {
     
+    @IBOutlet weak var taskNameTextField: UITextField!    
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var limitDateTextField: UITextField!
     var toolBar: UIToolbar!
@@ -33,9 +34,23 @@ class AddNewTaskViewController : UIViewController {
     }
     
     @IBAction func tappedAddBtn(_ sender: Any) {
+        if !validCategory() {
+            return
+        }
         // TODO: タスク追加処理
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: -
+    
+    private func validCategory() -> Bool {
+        guard let taskName = taskNameTextField.text, !taskName.isEmpty else {
+            let alert = UIAlertController.singleBtnAlert(title: "", message: "タスク名を入力して下さい", completion: nil)
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
     
     // MARK: - UIPickerView
