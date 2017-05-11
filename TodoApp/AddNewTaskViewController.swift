@@ -13,7 +13,7 @@ class AddNewTaskViewController : UIViewController {
     @IBOutlet weak var taskNameTextField: UITextField!    
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var limitDateTextField: UITextField!
-    var toolBar: UIToolbar!
+    private var toolBar: UIToolbar!
     
     // MARK: - Life Cycle
     
