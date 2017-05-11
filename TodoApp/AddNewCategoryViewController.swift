@@ -40,14 +40,7 @@ class AddNewCategoryViewController : UIViewController {
         let todoCategory = TodoCategory()
         todoCategory.name = categoryName
         
-        do {
-            let realm = try Realm()
-            try realm.write{
-                realm.add(todoCategory)
-            }
-        } catch {
-            // TODO: エラー処理
-        }
+        RealmManager.insertCategoryData(todoCategory: todoCategory)
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

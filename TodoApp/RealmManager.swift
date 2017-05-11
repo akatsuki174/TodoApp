@@ -15,4 +15,14 @@ class RealmManager {
     class func getAllCategory() -> Results<TodoCategory>? {
         return realm.objects(TodoCategory.self)
     }
+    
+    class func insertCategoryData(todoCategory: TodoCategory) {
+        do {
+            try realm.write {
+                realm.add(todoCategory)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
 }
