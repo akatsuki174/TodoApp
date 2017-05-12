@@ -23,7 +23,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CategoryListCell", bundle: nil), forCellReuseIdentifier: "CategoryListCell")
         
-        todoCategories = RealmManager.getAllCategory()
+        todoCategories = RealmManager.getAllCategories()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -12,7 +12,7 @@ import RealmSwift
 class RealmManager {
     static let realm = try! Realm()
     
-    class func getAllCategory() -> Results<TodoCategory>? {
+    class func getAllCategories() -> Results<TodoCategory>? {
         return realm.objects(TodoCategory.self)
     }
     
