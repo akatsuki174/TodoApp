@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var todoTasks:Results<TodoTask>?
     var categoryName: String!
     
     // MARK: - Life Cycle
@@ -21,6 +23,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")
+        
+        todoTasks = RealmManager.getAllTasks()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,15 +34,17 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return todoTasks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
-        cell.nameLabel.text = "買い物"
-        cell.limitLabel.text = "🕑2017/05/05"
+        let todoTask = todoTasks?[indexPath.row]
+        if let task = todoTask {
+            cell.nameLabel.text = task.name
+            cell.limitLabel.text = "🕑\(String(describing: task.limitDate))" // TODO: 表記修正
+        }
         return cell
-
     }
     
     // MARK: - UITableViewDelegate

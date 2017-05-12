@@ -16,6 +16,10 @@ class RealmManager {
         return realm.objects(TodoCategory.self)
     }
     
+    class func getAllTasks() -> Results<TodoTask>? {
+        return realm.objects(TodoTask.self)
+    }
+    
     class func insertCategoryData(todoCategory: TodoCategory) {
         do {
             try realm.write {
