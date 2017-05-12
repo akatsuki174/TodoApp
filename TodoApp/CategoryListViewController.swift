@@ -58,13 +58,15 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "tappedCategory",sender: self)
+        performSegue(withIdentifier: "tappedCategory",sender: todoCategories?[indexPath.row])
     }
     
     // MARK: - 
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "tappedCategory") {
+            let nextVC = segue.destination as! TaskListViewController
+            nextVC.categoryName = (sender as? TodoCategory)?.name ?? ""
         }
     }
 

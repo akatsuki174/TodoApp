@@ -11,11 +11,13 @@ import UIKit
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var categoryName: String!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = categoryName
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")
