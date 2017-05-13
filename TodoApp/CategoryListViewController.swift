@@ -54,6 +54,15 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         }
         return cell
     }
+        
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController.doubleBtnAlert(title: "", message: "「\(String(describing: todoCategories![indexPath.row].name))」カテゴリの全てのタスクが削除されますがよろしいですか？", otherBtnTitle: "削除しない", completion: {
+                
+            })
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
     // MARK: - UITableViewDelegate
     

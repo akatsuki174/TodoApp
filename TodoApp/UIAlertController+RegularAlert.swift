@@ -19,4 +19,16 @@ extension UIAlertController {
         }))
         return alert
     }
+    
+    class func doubleBtnAlert(title: String, message: String, otherBtnTitle:String, completion: (() -> Void)?) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: otherBtnTitle, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+            (action:UIAlertAction!) -> Void in
+            if let completion = completion {
+                completion()
+            }
+        }))
+        return alert
+    }
 }
