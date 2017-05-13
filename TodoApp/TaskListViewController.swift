@@ -19,7 +19,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = todoCategory.name
+        self.navigationItem.title = "「\(todoCategory.name)」カテゴリ"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")
