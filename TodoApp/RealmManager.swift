@@ -36,4 +36,15 @@ class RealmManager {
             // TODO: エラー処理
         }
     }
+    
+    class func deleteCategory(todoCategory: TodoCategory) {
+        do {
+            try realm.write {
+                realm.delete(todoCategory.tasks)
+                realm.delete(todoCategory)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
 }
