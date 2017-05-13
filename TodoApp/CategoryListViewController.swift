@@ -50,7 +50,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         let todoCategory = todoCategories?[indexPath.row]
         if let category = todoCategory {
             cell.nameLabel.text = category.name
-            cell.numLabel.text = String(describing: category.taskNum)
+            cell.numLabel.text = String(describing: category.tasks.count)
         }
         return cell
     }
