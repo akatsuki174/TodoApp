@@ -47,4 +47,14 @@ class RealmManager {
             // TODO: エラー処理
         }
     }
+    
+    class func deleteTask(todoTask: TodoTask) {
+        do {
+            try realm.write {
+                realm.delete(todoTask)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
 }
