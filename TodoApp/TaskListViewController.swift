@@ -27,6 +27,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         todoTasks = RealmManager.getAllTasks()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        // タスク一覧ページに戻ってきた時にハイライト解除
+        if let selectedRow = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRow, animated: true)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -42,7 +51,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let todoTask = todoTasks?[indexPath.row]
         if let task = todoTask {
             cell.nameLabel.text = task.name
-            cell.limitLabel.text = "🕑\(String(describing: task.limitDate))" // TODO: 表記修正
+            let dateStr = task.limitDate == nil ? "" : DateUtils.stringFromDate(date: task.limitDate!)
+            cell.limitLabel.text = "🕑\(dateStr)"
         }
         return cell
     }

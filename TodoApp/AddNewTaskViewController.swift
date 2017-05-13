@@ -86,8 +86,6 @@ class AddNewTaskViewController : UIViewController {
     }
     
     @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat  = "yyyy/MM/dd";
-        limitDateTextField.text = dateFormatter.string(from: sender.date)
+        limitDateTextField.text = DateUtils.stringFromDate(date: sender.date)
     }
 }
