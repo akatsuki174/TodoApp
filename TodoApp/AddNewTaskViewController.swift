@@ -14,6 +14,7 @@ class AddNewTaskViewController : UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var limitDateTextField: UITextField!
     private var toolBar: UIToolbar!
+    var categoryName: String!
     
     // MARK: - Life Cycle
     
@@ -37,7 +38,13 @@ class AddNewTaskViewController : UIViewController {
         if !validCategory() {
             return
         }
-        // TODO: タスク追加処理
+        let todoTask = TodoTask()
+        todoTask.name = taskNameTextField.text!
+        todoTask.category = categoryName
+        todoTask.memo = memoTextView.text
+        todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
+        
+        RealmManager.insertTaskData(todoTask: todoTask)
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

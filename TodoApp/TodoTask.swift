@@ -14,11 +14,11 @@ class TodoTask: Object {
     dynamic var id: String = UUID().uuidString
     dynamic var name: String = ""
     dynamic var memo: String?
-    dynamic var category: TodoCategory?
-    dynamic var limitDate: NSDate?
-    dynamic var createdDate: NSDate = NSDate()
+    dynamic var category: String!
+    dynamic var limitDate: Date?
+    dynamic var createdDate: Date = Date()
     
-    convenience init(name: String, memo: String?, category: TodoCategory, limitDate: NSDate?) {
+    convenience init(name: String, memo: String?, category: String, limitDate: Date?) {
         self.init()
         self.name = name
         self.memo = memo

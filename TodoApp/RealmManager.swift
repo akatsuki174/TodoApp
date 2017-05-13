@@ -29,4 +29,14 @@ class RealmManager {
             // TODO: エラー処理
         }
     }
+    
+    class func insertTaskData(todoTask: TodoTask) {
+        do {
+            try realm.write {
+                realm.add(todoTask)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
 }
