@@ -74,7 +74,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        performSegue(withIdentifier: "tappedTask",sender: todoTasks?[indexPath.row])
     }
     
     
@@ -82,8 +82,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
-        if (identifier == "tappedCategory") {
-
+        if (identifier == "tappedTask") {
+            let nextVC = segue.destination as! AddNewTaskViewController
+            nextVC.todoCategory = todoCategory
         } else if (identifier == "tappedAddBtn") {
             guard let nav = segue.destination as? UINavigationController else {
                 return

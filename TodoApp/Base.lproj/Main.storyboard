@@ -120,6 +120,7 @@
                     <navigationItem key="navigationItem" id="bmy-4y-qF5"/>
                     <connections>
                         <outlet property="tableView" destination="DbG-Tr-kbH" id="N5P-cq-YIW"/>
+                        <segue destination="q8V-IX-GVq" kind="show" identifier="tappedTask" id="T6X-4c-QvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzk-tq-qva" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,10 +370,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zu8-QS-ePa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="-323"/>
+            <point key="canvasLocation" x="1869" y="-811"/>
         </scene>
     </scenes>
     <resources>
         <image name="addBtn" width="45" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="T6X-4c-QvO"/>
+    </inferredMetricsTieBreakers>
 </document>
