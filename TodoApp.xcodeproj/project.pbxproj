@@ -25,6 +25,7 @@
 		2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */; };
 		2CDABCF11EBDB58C00719D72 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDABCEF1EBDB58C00719D72 /* Realm.framework */; };
 		2CDABCF21EBDB58C00719D72 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDABCF01EBDB58C00719D72 /* RealmSwift.framework */; };
+		2CE1AC141EC6AB8A00D55E82 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1AC131EC6AB8A00D55E82 /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RegularAlert.swift"; sourceTree = "<group>"; };
 		2CDABCEF1EBDB58C00719D72 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2CDABCF01EBDB58C00719D72 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		2CE1AC131EC6AB8A00D55E82 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				2CDA350C1EBF28AD00C8655B /* Model */,
 				2CDABCD41EBC1BE300719D72 /* AppDelegate.swift */,
 				2CDABCEC1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift */,
+				2CE1AC131EC6AB8A00D55E82 /* DateUtils.swift */,
 				2CBE4D8B1EC34F4000DF19E3 /* RealmManager.swift */,
 				2CDABCD81EBC1BE300719D72 /* Main.storyboard */,
 				2CDABCDB1EBC1BE300719D72 /* Assets.xcassets */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDABCED1EBDA2C600719D72 /* UIAlertController+RegularAlert.swift in Sources */,
+				2CE1AC141EC6AB8A00D55E82 /* DateUtils.swift in Sources */,
 				2CBE4D891EC0308300DF19E3 /* TaskListCell.swift in Sources */,
 				2CBE4D8C1EC34F4000DF19E3 /* RealmManager.swift in Sources */,
 				2CDA350B1EBF016D00C8655B /* TaskListViewController.swift in Sources */,
