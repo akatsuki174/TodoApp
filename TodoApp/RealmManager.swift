@@ -16,7 +16,7 @@ class RealmManager {
         return realm.objects(TodoCategory.self)
     }
     
-    class func insertCategoryData(todoCategory: TodoCategory) {
+    class func updateCategoryData(todoCategory: TodoCategory) {
         do {
             try realm.write {
                 realm.add(todoCategory, update: true)
@@ -26,11 +26,11 @@ class RealmManager {
         }
     }
     
-    class func insertTaskData(todoCategory: TodoCategory, todoTask: TodoTask) {
+    class func updateTaskData(todoCategory: TodoCategory, todoTask: TodoTask) {
         do {
             try realm.write {
                 todoCategory.tasks.append(todoTask)
-                realm.add(todoCategory)
+                realm.add(todoCategory, update: true)
             }
         } catch {
             // TODO: エラー処理

@@ -38,7 +38,7 @@ class AddNewCategoryViewController : UIViewController {
         let todoCategory = TodoCategory()
         todoCategory.name = categoryNameTextField.text!
         
-        RealmManager.insertCategoryData(todoCategory: todoCategory)
+        RealmManager.updateCategoryData(todoCategory: todoCategory)
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

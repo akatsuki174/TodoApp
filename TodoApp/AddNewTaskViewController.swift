@@ -44,7 +44,7 @@ class AddNewTaskViewController : UIViewController {
         todoTask.memo = memoTextView.text
         todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
         
-        RealmManager.insertTaskData(todoCategory: todoCategory, todoTask: todoTask)
+        RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
