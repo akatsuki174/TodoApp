@@ -35,10 +35,8 @@ class AddNewCategoryViewController : UIViewController {
         if !validCategory() {
             return
         }
-        let categoryName = categoryNameTextField.text!
-
         let todoCategory = TodoCategory()
-        todoCategory.name = categoryName
+        todoCategory.name = categoryNameTextField.text!
         
         RealmManager.insertCategoryData(todoCategory: todoCategory)
         
