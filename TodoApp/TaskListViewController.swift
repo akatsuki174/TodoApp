@@ -12,7 +12,7 @@ import RealmSwift
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var todoTasks:Results<TodoTask>?
+    var todoTasks:List<TodoTask>?
     var todoCategory: TodoCategory!
     
     // MARK: - Life Cycle
@@ -24,7 +24,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")
         
-        todoTasks = RealmManager.getAllTasks()
+        todoTasks = todoCategory.tasks
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +51,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let todoTask = todoTasks?[indexPath.row]
         if let task = todoTask {
             cell.nameLabel.text = task.name
-            let dateStr = task.limitDate == nil ? "" : DateUtils.stringFromDate(date: task.limitDate!)
-            cell.limitLabel.text = "🕑\(dateStr)"
+            let dateStr = task.limitDate == nil ? "" : "🕑\(DateUtils.stringFromDate(date: task.limitDate!))"
+            cell.limitLabel.text = dateStr
         }
         return cell
     }
@@ -66,4 +66,23 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped")
     }
+    
+    
+    // MARK: -
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier
+        if (identifier == "tappedCategory") {
+
+        } else if (identifier == "tappedAddBtn") {
+            guard let nav = segue.destination as? UINavigationController else {
+                return
+            }
+            guard let newTaskVC = nav.topViewController as? AddNewTaskViewController else {
+                return
+            }
+            newTaskVC.todoCategory = todoCategory
+        }
+    }
+
 }

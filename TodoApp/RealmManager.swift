@@ -16,24 +16,21 @@ class RealmManager {
         return realm.objects(TodoCategory.self)
     }
     
-    class func getAllTasks() -> Results<TodoTask>? {
-        return realm.objects(TodoTask.self)
-    }
-    
     class func insertCategoryData(todoCategory: TodoCategory) {
         do {
             try realm.write {
-                realm.add(todoCategory)
+                realm.add(todoCategory, update: true)
             }
         } catch {
             // TODO: エラー処理
         }
     }
     
-    class func insertTaskData(todoTask: TodoTask) {
+    class func insertTaskData(todoCategory: TodoCategory, todoTask: TodoTask) {
         do {
             try realm.write {
-                realm.add(todoTask)
+                todoCategory.tasks.append(todoTask)
+                realm.add(todoCategory)
             }
         } catch {
             // TODO: エラー処理

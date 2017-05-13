@@ -18,7 +18,7 @@ class TodoTask: Object {
     dynamic var limitDate: Date?
     dynamic var createdDate: Date = Date()
     
-    convenience init(name: String, memo: String?, category: TodoCategory, limitDate: Date?) {
+    convenience init(name: String, memo: String?, category: TodoCategory?, limitDate: Date?) {
         self.init()
         self.name = name
         self.memo = memo

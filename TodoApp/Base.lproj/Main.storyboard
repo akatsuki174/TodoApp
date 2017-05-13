@@ -102,7 +102,7 @@
                                 </constraints>
                                 <state key="normal" image="addBtn"/>
                                 <connections>
-                                    <segue destination="nWD-yo-OzE" kind="presentation" id="D6z-vi-4Fu"/>
+                                    <segue destination="nWD-yo-OzE" kind="presentation" identifier="tappedAddBtn" id="D6z-vi-4Fu"/>
                                 </connections>
                             </button>
                         </subviews>
