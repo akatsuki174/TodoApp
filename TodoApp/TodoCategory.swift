@@ -13,6 +13,7 @@ class TodoCategory: Object {
     
     dynamic var name: String = ""
     dynamic var taskNum: Int = 0
+    let tasks = List<TodoTask>()
     
     // カテゴリ名の重複を許さない仕様なのでnameを主キーに設定
     override static func primaryKey() -> String? {

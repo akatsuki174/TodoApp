@@ -75,7 +75,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "tappedCategory") {
             let nextVC = segue.destination as! TaskListViewController
-            nextVC.categoryName = (sender as? TodoCategory)?.name ?? ""
+            nextVC.todoCategory = sender as? TodoCategory
         }
     }
 

@@ -13,13 +13,13 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     var todoTasks:Results<TodoTask>?
-    var categoryName: String!
+    var todoCategory: TodoCategory!
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = categoryName
+        self.navigationItem.title = todoCategory.name
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")

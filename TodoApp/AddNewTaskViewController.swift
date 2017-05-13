@@ -14,7 +14,7 @@ class AddNewTaskViewController : UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var limitDateTextField: UITextField!
     private var toolBar: UIToolbar!
-    var categoryName: String!
+    var todoCategory: TodoCategory!
     
     // MARK: - Life Cycle
     
@@ -40,7 +40,7 @@ class AddNewTaskViewController : UIViewController {
         }
         let todoTask = TodoTask()
         todoTask.name = taskNameTextField.text!
-        todoTask.category = categoryName
+        todoTask.category = todoCategory
         todoTask.memo = memoTextView.text
         todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
         
