@@ -34,29 +34,22 @@ class AddNewTaskViewController : UIViewController {
     // MARK: - Tap Action
     
     @objc private func clickedLeftBtn(_ sender: Any) {
+        goPreviousVC()
+    }
+    
+    @objc private func clickedRightBtn(_ sender: Any) {
+        if !validCategory() {
+            return
+        }
+        updateTodoTask()
+        goPreviousVC()
+    }
+    
+    private func goPreviousVC () {
         if todoTask == nil {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             self.navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    @objc private func clickedRightBtn(_ sender: Any) {
-        if todoTask == nil {
-            if !validCategory() {
-                return
-            }
-            let todoTask = TodoTask()
-            todoTask.name = taskNameTextField.text!
-            todoTask.category = todoCategory
-            todoTask.memo = memoTextView.text
-            todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
-            
-            RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
-            
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
-        } else {
-            
         }
     }
     
@@ -69,6 +62,23 @@ class AddNewTaskViewController : UIViewController {
             return false
         }
         return true
+    }
+    
+    private func updateTodoTask() {
+        let todoTask = TodoTask()
+        if let id = self.todoTask?.id {
+            todoTask.id = id
+        }
+        todoTask.name = taskNameTextField.text!
+        todoTask.category = todoCategory
+        todoTask.memo = memoTextView.text
+        todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
+        
+        if self.todoTask == nil {
+            RealmManager.insertTaskData(todoCategory: todoCategory, todoTask: todoTask)
+        } else {
+            RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
+        }
     }
     
     private func setupNaviBarBtn() {

@@ -29,6 +29,17 @@ class RealmManager {
     class func updateTaskData(todoCategory: TodoCategory, todoTask: TodoTask) {
         do {
             try realm.write {
+                realm.add(todoTask, update: true)
+                realm.add(todoCategory, update: true)
+            }
+        } catch {
+            // TODO: エラー処理
+        }
+    }
+    
+    class func insertTaskData(todoCategory: TodoCategory, todoTask: TodoTask) {
+        do {
+            try realm.write {
                 todoCategory.tasks.append(todoTask)
                 realm.add(todoCategory, update: true)
             }
