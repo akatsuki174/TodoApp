@@ -40,7 +40,10 @@ class NotificationManager {
     }
     
     class func deleteRemainderPush(todoTask: TodoTask) {
-        for notif in UIApplication.shared.scheduledLocalNotifications! {
+        guard let notifications = UIApplication.shared.scheduledLocalNotifications else {
+            return
+        }
+        for notif in notifications {
             if notif.userInfo?["id"] as! String == todoTask.id {
                 UIApplication.shared.cancelLocalNotification(notif)
             }
