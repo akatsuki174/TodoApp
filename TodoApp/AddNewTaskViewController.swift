@@ -76,8 +76,59 @@ class AddNewTaskViewController : UIViewController {
         
         if self.todoTask == nil {
             RealmManager.insertTaskData(todoCategory: todoCategory, todoTask: todoTask)
+            registerRemainderPush(todoTask: todoTask)
         } else {
             RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
+            deleteRemainderPush(todoTask: todoTask)
+            registerRemainderPush(todoTask: todoTask)
+        }
+    }
+    
+    private func registerRemainderPush(todoTask: TodoTask) {
+        guard let limitDate = todoTask.limitDate else {
+            return
+        }
+        let theDayBeforePushDate = calculateFireDate(date: limitDate, type: .theDayBefore)
+        let theDayPushDate = calculateFireDate(date: limitDate, type: .theDay)
+        let application = UIApplication.shared
+        
+        // TODO: 現在時間を過ぎていたら登録しない
+        
+        // 前日プッシュ
+        let theDayBeforeNotif = UILocalNotification()
+        theDayBeforeNotif.alertBody = "明日締め切りです：\(todoTask.name)"
+        theDayBeforeNotif.fireDate = theDayBeforePushDate
+        theDayBeforeNotif.applicationIconBadgeNumber += 1
+        theDayBeforeNotif.userInfo = ["id": todoTask.id, "type": PushType.theDayBefore.rawValue]
+        application.scheduleLocalNotification(theDayBeforeNotif)
+        
+        // 当日プッシュ
+        let theDayNotif = UILocalNotification()
+        theDayNotif.alertBody = "今日締め切りです：\(todoTask.name)"
+        theDayNotif.fireDate = theDayPushDate
+        theDayNotif.applicationIconBadgeNumber += 1
+        theDayNotif.userInfo = ["id": todoTask.id, "type": PushType.theDay.rawValue]
+        application.scheduleLocalNotification(theDayNotif)
+    }
+    
+    private func deleteRemainderPush(todoTask: TodoTask) {
+        for notif in UIApplication.shared.scheduledLocalNotifications! {
+            if notif.userInfo?["id"] as! String == todoTask.id {
+                UIApplication.shared.cancelLocalNotification(notif)
+            }
+        }
+    }
+    
+    private func calculateFireDate(date: Date, type: PushType) -> Date {
+        let calender = Calendar(identifier: Calendar.Identifier.gregorian)
+        var comps = calender.dateComponents([.year, .month, .day, .hour], from: date)
+        if type == .theDayBefore {
+            comps.day = comps.day! - 1
+            comps.hour = 20
+            return calender.date(from: comps)!
+        } else {
+            comps.hour = 8
+            return calender.date(from: comps)!
         }
     }
     
@@ -128,4 +179,9 @@ class AddNewTaskViewController : UIViewController {
     @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
         limitDateTextField.text = DateUtils.stringFromDate(date: sender.date)
     }
+}
+
+enum PushType: String {
+    case theDayBefore = "theDayBefore"
+    case theDay = "theDay"
 }

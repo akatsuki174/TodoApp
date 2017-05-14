@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        if let notification = launchOptions?[UIApplicationLaunchOptionsKey.localNotification] as? UILocalNotification,let _ = notification.userInfo {
+            application.applicationIconBadgeNumber = 0
+            application.cancelLocalNotification(notification)
+        }
+        
         let settings = UIUserNotificationSettings(types: [.badge, .alert], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
@@ -27,12 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        let notification = UILocalNotification()
-        notification.alertBody = "テスト"
-        notification.fireDate = Date(timeIntervalSinceNow:3) // TODO: あとで直す
-        notification.applicationIconBadgeNumber += 1
-        notification.userInfo = ["id": 1] // TODO: あとで直す
-        application.scheduleLocalNotification(notification)
+
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
