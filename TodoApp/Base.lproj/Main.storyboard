@@ -117,7 +117,9 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="bmy-4y-qF5"/>
+                    <navigationItem key="navigationItem" id="bmy-4y-qF5">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="92w-gK-sxx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DbG-Tr-kbH" id="N5P-cq-YIW"/>
                         <segue destination="q8V-IX-GVq" kind="show" identifier="tappedTask" id="T6X-4c-QvO"/>
@@ -127,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="871.875" y="-323.23943661971833"/>
         </scene>
-        <!--新規タスク-->
+        <!--Add New Task View Controller-->
         <scene sceneID="dEz-gy-B5g">
             <objects>
                 <viewController id="q8V-IX-GVq" customClass="AddNewTaskViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,18 +245,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="新規タスク" id="oWn-W9-eia">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BbI-fW-iHf">
-                            <connections>
-                                <action selector="tappedCloseBtn:" destination="q8V-IX-GVq" id="KCd-ex-3Q0"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="追加" id="AEO-oF-ugz">
-                            <connections>
-                                <action selector="tappedAddBtn:" destination="q8V-IX-GVq" id="Hv5-nO-VqR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="oWn-W9-eia"/>
                     <connections>
                         <outlet property="limitDateTextField" destination="gg7-MP-Hcb" id="9i5-RK-X1O"/>
                         <outlet property="memoTextView" destination="C1L-SM-kYO" id="vMR-z4-Awo"/>

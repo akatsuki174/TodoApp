@@ -85,6 +85,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if (identifier == "tappedTask") {
             let nextVC = segue.destination as! AddNewTaskViewController
             nextVC.todoCategory = todoCategory
+            nextVC.todoTask = sender as? TodoTask
         } else if (identifier == "tappedAddBtn") {
             guard let nav = segue.destination as? UINavigationController else {
                 return

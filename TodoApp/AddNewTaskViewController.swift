@@ -15,6 +15,7 @@ class AddNewTaskViewController : UIViewController {
     @IBOutlet weak var limitDateTextField: UITextField!
     private var toolBar: UIToolbar!
     var todoCategory: TodoCategory!
+    var todoTask: TodoTask?
     
     // MARK: - Life Cycle
     
@@ -22,31 +23,40 @@ class AddNewTaskViewController : UIViewController {
         super.viewDidLoad()
         memoTextView.layer.borderColor = UIColor(red: 229/255.0, green: 229/255.0, blue: 229/255.0, alpha: 1.0).cgColor
         setupPickerView()
+        setupNaviBarBtn()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - IBAction
+    // MARK: - Tap Action
     
-    @IBAction func tappedCloseBtn(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    @objc private func clickedLeftBtn(_ sender: Any) {
+        if todoTask == nil {
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
-    @IBAction func tappedAddBtn(_ sender: Any) {
-        if !validCategory() {
-            return
+    @objc private func clickedRightBtn(_ sender: Any) {
+        if todoTask == nil {
+            if !validCategory() {
+                return
+            }
+            let todoTask = TodoTask()
+            todoTask.name = taskNameTextField.text!
+            todoTask.category = todoCategory
+            todoTask.memo = memoTextView.text
+            todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
+            
+            RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
+            
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else {
+            
         }
-        let todoTask = TodoTask()
-        todoTask.name = taskNameTextField.text!
-        todoTask.category = todoCategory
-        todoTask.memo = memoTextView.text
-        todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
-        
-        RealmManager.updateTaskData(todoCategory: todoCategory, todoTask: todoTask)
-        
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: -
@@ -58,6 +68,17 @@ class AddNewTaskViewController : UIViewController {
             return false
         }
         return true
+    }
+    
+    private func setupNaviBarBtn() {
+        if todoTask == nil {
+            self.title = "新規タスク"
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(AddNewTaskViewController.clickedLeftBtn(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(AddNewTaskViewController.clickedRightBtn(_:)))
+        } else {
+            self.title = "タスク詳細"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(AddNewTaskViewController.clickedRightBtn(_:)))
+        }
     }
     
     // MARK: - UIPickerView
