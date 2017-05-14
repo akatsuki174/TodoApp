@@ -12,6 +12,7 @@ import RealmSwift
 class TodoCategory: Object {
     
     dynamic var name: String = ""
+    dynamic var createdDate: Date = Date()
     let tasks = List<TodoTask>()
     
     // カテゴリ名の重複を許さない仕様なのでnameを主キーに設定
