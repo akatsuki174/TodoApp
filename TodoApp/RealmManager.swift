@@ -16,6 +16,10 @@ class RealmManager {
         return realm.objects(TodoCategory.self)
     }
     
+    class func findCategory(categoryName: String) -> Results<TodoCategory> {
+        return realm.objects(TodoCategory.self).filter("name == %@", categoryName)
+    }
+    
     class func updateCategoryData(todoCategory: TodoCategory) {
         do {
             try realm.write {

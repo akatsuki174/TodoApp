@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class AddNewCategoryViewController : UIViewController {
     
@@ -51,8 +50,8 @@ class AddNewCategoryViewController : UIViewController {
             self.present(alert, animated: true, completion: nil)
             return false
         }
-        let category = try! Realm().objects(TodoCategory.self).filter("name == %@", categoryName)
-        if category.count > 0 {
+        let categories = RealmManager.findCategory(categoryName: categoryName)
+        if categories.count > 0 {
             let alert = UIAlertController.singleBtnAlert(title: "", message: "既に同じ名前のカテゴリがあります", completion: nil)
             self.present(alert, animated: true, completion: nil)
             return false
