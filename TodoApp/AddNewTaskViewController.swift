@@ -24,6 +24,7 @@ class AddNewTaskViewController : UIViewController {
         memoTextView.layer.borderColor = UIColor(red: 229/255.0, green: 229/255.0, blue: 229/255.0, alpha: 1.0).cgColor
         setupPickerView()
         setupNaviBarBtn()
+        setupTaskInfo()
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,6 +79,14 @@ class AddNewTaskViewController : UIViewController {
         } else {
             self.title = "タスク詳細"
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(AddNewTaskViewController.clickedRightBtn(_:)))
+        }
+    }
+    
+    private func setupTaskInfo() {
+        if todoTask != nil {
+            taskNameTextField.text = todoTask?.name
+            memoTextView.text = todoTask?.memo
+            limitDateTextField.text = todoTask?.limitDate != nil ? DateUtils.stringFromDate(date: (todoTask?.limitDate)!) : ""
         }
     }
     
