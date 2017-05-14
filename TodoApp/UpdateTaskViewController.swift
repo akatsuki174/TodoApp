@@ -1,5 +1,5 @@
 //
-//  AddNewTaskViewController.swift
+//  UpdateTaskViewController.swift
 //  TodoApp
 //
 //  Created by akatsuki174 on 2017/05/07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewTaskViewController : UIViewController {
+class UpdateTaskViewController : UIViewController {
     
     @IBOutlet weak var taskNameTextField: UITextField!    
     @IBOutlet weak var memoTextView: UITextView!
@@ -87,11 +87,11 @@ class AddNewTaskViewController : UIViewController {
     private func setupNaviBarBtn() {
         if todoTask == nil {
             self.title = "新規タスク"
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(AddNewTaskViewController.clickedLeftBtn(_:)))
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(AddNewTaskViewController.clickedRightBtn(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(UpdateTaskViewController.clickedLeftBtn(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(UpdateTaskViewController.clickedRightBtn(_:)))
         } else {
             self.title = "タスク詳細"
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(AddNewTaskViewController.clickedRightBtn(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(UpdateTaskViewController.clickedRightBtn(_:)))
         }
     }
     
@@ -117,13 +117,13 @@ class AddNewTaskViewController : UIViewController {
     private func setupPickerView() {
         toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let okBtn = UIBarButtonItem(title: "設定する", style: .plain, target: self, action: #selector(AddNewTaskViewController.tappedOK))
-        let notSetBtn = UIBarButtonItem(title: "設定しない", style: .plain, target: self, action: #selector(AddNewTaskViewController.tappedNotSet))
+        let okBtn = UIBarButtonItem(title: "設定する", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedOK))
+        let notSetBtn = UIBarButtonItem(title: "設定しない", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedNotSet))
         toolBar.items = [okBtn,notSetBtn]
         
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date
-        datePickerView.addTarget(self, action: #selector(AddNewTaskViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
+        datePickerView.addTarget(self, action: #selector(UpdateTaskViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
         limitDateTextField.inputView = datePickerView
         limitDateTextField.inputAccessoryView = toolBar
     }

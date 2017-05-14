@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */; };
 		2C949C4B1EC8508600D7547E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C949C4A1EC8508600D7547E /* NotificationManager.swift */; };
-		2CBE4D861EBF30F900DF19E3 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D851EBF30F900DF19E3 /* AddNewTaskViewController.swift */; };
+		2CBE4D861EBF30F900DF19E3 /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D851EBF30F900DF19E3 /* UpdateTaskViewController.swift */; };
 		2CBE4D891EC0308300DF19E3 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */; };
 		2CBE4D8A1EC0308300DF19E3 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */; };
 		2CBE4D8C1EC34F4000DF19E3 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE4D8B1EC34F4000DF19E3 /* RealmManager.swift */; };
@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		2C57EB651EBDBD9F000D6D96 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
 		2C949C4A1EC8508600D7547E /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		2CBE4D851EBF30F900DF19E3 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		2CBE4D851EBF30F900DF19E3 /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewController.swift; sourceTree = "<group>"; };
 		2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		2CBE4D8B1EC34F4000DF19E3 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				2CDABCD61EBC1BE300719D72 /* CategoryListViewController.swift */,
 				2CDABCEA1EBD864F00719D72 /* AddNewCategoryViewController.swift */,
 				2CDA350A1EBF016D00C8655B /* TaskListViewController.swift */,
-				2CBE4D851EBF30F900DF19E3 /* AddNewTaskViewController.swift */,
+				2CBE4D851EBF30F900DF19E3 /* UpdateTaskViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */,
 				2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */,
 				2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */,
-				2CBE4D861EBF30F900DF19E3 /* AddNewTaskViewController.swift in Sources */,
+				2CBE4D861EBF30F900DF19E3 /* UpdateTaskViewController.swift in Sources */,
 				2CDA35101EBF299D00C8655B /* TodoTask.swift in Sources */,
 				2CDABCD51EBC1BE300719D72 /* AppDelegate.swift in Sources */,
 			);

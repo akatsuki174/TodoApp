@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="871.875" y="-323.23943661971833"/>
         </scene>
-        <!--Add New Task View Controller-->
+        <!--Update Task View Controller-->
         <scene sceneID="dEz-gy-B5g">
             <objects>
-                <viewController id="q8V-IX-GVq" customClass="AddNewTaskViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q8V-IX-GVq" customClass="UpdateTaskViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9pD-J9-Veo"/>
                         <viewControllerLayoutGuide type="bottom" id="V8i-nR-LH3"/>

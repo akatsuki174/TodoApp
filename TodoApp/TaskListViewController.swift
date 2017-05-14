@@ -87,14 +87,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
         if (identifier == "tappedTask") {
-            let nextVC = segue.destination as! AddNewTaskViewController
+            let nextVC = segue.destination as! UpdateTaskViewController
             nextVC.todoCategory = todoCategory
             nextVC.todoTask = sender as? TodoTask
         } else if (identifier == "tappedAddBtn") {
             guard let nav = segue.destination as? UINavigationController else {
                 return
             }
-            guard let newTaskVC = nav.topViewController as? AddNewTaskViewController else {
+            guard let newTaskVC = nav.topViewController as? UpdateTaskViewController else {
                 return
             }
             newTaskVC.todoCategory = todoCategory
