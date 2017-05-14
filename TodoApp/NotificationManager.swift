@@ -16,24 +16,27 @@ class NotificationManager {
         let theDayBeforePushDate = NotificationManager.calculateFireDate(date: limitDate, type: .theDayBefore)
         let theDayPushDate = NotificationManager.calculateFireDate(date: limitDate, type: .theDay)
         let application = UIApplication.shared
+        let now = Date()
         
-        // TODO: 現在時間を過ぎていたら登録しない
-        
-        // 前日プッシュ
-        let theDayBeforeNotif = UILocalNotification()
-        theDayBeforeNotif.alertBody = "明日締め切りです：\(todoTask.name)"
-        theDayBeforeNotif.fireDate = theDayBeforePushDate
-        theDayBeforeNotif.applicationIconBadgeNumber += 1
-        theDayBeforeNotif.userInfo = ["id": todoTask.id, "type": PushType.theDayBefore.rawValue]
-        application.scheduleLocalNotification(theDayBeforeNotif)
-        
-        // 当日プッシュ
-        let theDayNotif = UILocalNotification()
-        theDayNotif.alertBody = "今日締め切りです：\(todoTask.name)"
-        theDayNotif.fireDate = theDayPushDate
-        theDayNotif.applicationIconBadgeNumber += 1
-        theDayNotif.userInfo = ["id": todoTask.id, "type": PushType.theDay.rawValue]
-        application.scheduleLocalNotification(theDayNotif)
+        if theDayBeforePushDate.compare(now) == .orderedDescending {
+            // 前日プッシュ
+            let theDayBeforeNotif = UILocalNotification()
+            theDayBeforeNotif.alertBody = "明日締め切りです：\(todoTask.name)"
+            theDayBeforeNotif.fireDate = theDayBeforePushDate
+            theDayBeforeNotif.applicationIconBadgeNumber += 1
+            theDayBeforeNotif.userInfo = ["id": todoTask.id, "type": PushType.theDayBefore.rawValue]
+            application.scheduleLocalNotification(theDayBeforeNotif)
+        }
+
+        if theDayPushDate.compare(now) == .orderedDescending {
+            // 当日プッシュ
+            let theDayNotif = UILocalNotification()
+            theDayNotif.alertBody = "今日締め切りです：\(todoTask.name)"
+            theDayNotif.fireDate = theDayPushDate
+            theDayNotif.applicationIconBadgeNumber += 1
+            theDayNotif.userInfo = ["id": todoTask.id, "type": PushType.theDay.rawValue]
+            application.scheduleLocalNotification(theDayNotif)
+        }
     }
     
     class func deleteRemainderPush(todoTask: TodoTask) {
