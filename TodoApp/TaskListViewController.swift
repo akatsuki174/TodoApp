@@ -61,6 +61,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if editingStyle == .delete {
             let alert = UIAlertController.doubleBtnAlert(title: "", message: "削除してよろしいですか？", otherBtnTitle: "削除しない", completion: {
                 RealmManager.deleteTask(todoTask: self.todoTasks![indexPath.row])
+                NotificationManager.deleteRemainderPush(todoTask: self.todoTasks![indexPath.row])
                 tableView.deleteRows(at: [indexPath], with: .fade)
             })
             self.present(alert, animated: true, completion: nil)

@@ -59,6 +59,9 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
         if editingStyle == .delete {
             let alert = UIAlertController.doubleBtnAlert(title: "", message: "「\(String(describing: todoCategories![indexPath.row].name))」カテゴリの全てのタスクが削除されますがよろしいですか？", otherBtnTitle: "削除しない", completion: {
                 RealmManager.deleteCategory(todoCategory: self.todoCategories![indexPath.row])
+                for task in self.todoCategories![indexPath.row].tasks {
+                    NotificationManager.deleteRemainderPush(todoTask: task)
+                }
                 tableView.deleteRows(at: [indexPath], with: .fade)
             })
             self.present(alert, animated: true, completion: nil)
