@@ -51,8 +51,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let todoTask = todoTasks?[indexPath.row]
         if let task = todoTask {
             cell.nameLabel.text = task.name
-            let dateStr = task.limitDate == nil ? "" : "🕑\(DateUtils.stringFromDate(date: task.limitDate!))"
-            cell.limitLabel.text = dateStr
+            if let limitDate = task.limitDate {
+                cell.limitLabel.text = "🕑\(DateUtils.stringFromDate(date: limitDate))"
+                cell.limitLabel.backgroundColor = limitDateColor(limitDate: limitDate)
+            }
         }
         return cell
     }
@@ -98,4 +100,21 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    private func limitDateColor(limitDate: Date) -> UIColor {
+        let calender = Calendar(identifier: Calendar.Identifier.gregorian)
+        var nowComp = calender.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
+        nowComp.hour = 0
+        nowComp.minute = 0
+        
+        let diffComp = calender.dateComponents([.day], from: calender.date(from: nowComp)!, to: limitDate)
+        if diffComp.day! <= 0 {
+            // 期限当日、もしくは過ぎていたら赤
+            return UIColor(red: 255/255.0, green: 182/255.0, blue: 193/255.0, alpha: 1.0)
+        } else if diffComp.day! == 1 {
+            // 期限前日なら黄色
+            return UIColor(red: 255/255.0, green: 241/255.0, blue: 15/255.0, alpha: 1.0)
+        }
+        
+        return UIColor.clear
+    }
 }
