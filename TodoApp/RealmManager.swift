@@ -21,8 +21,8 @@ class RealmManager {
             try realm.write {
                 realm.add(todoCategory, update: true)
             }
-        } catch {
-            // TODO: エラー処理
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -32,8 +32,8 @@ class RealmManager {
                 realm.add(todoTask, update: true)
                 realm.add(todoCategory, update: true)
             }
-        } catch {
-            // TODO: エラー処理
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -43,8 +43,8 @@ class RealmManager {
                 todoCategory.tasks.append(todoTask)
                 realm.add(todoCategory, update: true)
             }
-        } catch {
-            // TODO: エラー処理
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -54,8 +54,8 @@ class RealmManager {
                 realm.delete(todoCategory.tasks)
                 realm.delete(todoCategory)
             }
-        } catch {
-            // TODO: エラー処理
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -64,8 +64,8 @@ class RealmManager {
             try realm.write {
                 realm.delete(todoTask)
             }
-        } catch {
-            // TODO: エラー処理
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
 }
