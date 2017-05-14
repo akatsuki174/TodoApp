@@ -132,8 +132,3 @@ class AddNewTaskViewController : UIViewController {
         limitDateTextField.text = DateUtils.stringFromDate(date: sender.date)
     }
 }
-
-enum PushType: String {
-    case theDayBefore = "theDayBefore"
-    case theDay = "theDay"
-}

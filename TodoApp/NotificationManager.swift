@@ -59,6 +59,9 @@ class NotificationManager {
             return calender.date(from: comps)!
         }
     }
-    
- 
+}
+
+enum PushType: String {
+    case theDayBefore = "theDayBefore"
+    case theDay = "theDay"
 }
