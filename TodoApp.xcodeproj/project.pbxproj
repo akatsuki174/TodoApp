@@ -27,6 +27,7 @@
 		2CDABCF11EBDB58C00719D72 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDABCEF1EBDB58C00719D72 /* Realm.framework */; };
 		2CDABCF21EBDB58C00719D72 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDABCF01EBDB58C00719D72 /* RealmSwift.framework */; };
 		2CE1AC141EC6AB8A00D55E82 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1AC131EC6AB8A00D55E82 /* DateUtils.swift */; };
+		9AFF13251F121FB100106280 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF13241F121FB100106280 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2CDABCEF1EBDB58C00719D72 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		2CDABCF01EBDB58C00719D72 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		2CE1AC131EC6AB8A00D55E82 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		9AFF13241F121FB100106280 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2CDABCE61EBD787D00719D72 /* CategoryListCell.xib */,
 				2CBE4D871EC0308300DF19E3 /* TaskListCell.swift */,
 				2CBE4D881EC0308300DF19E3 /* TaskListCell.xib */,
+				9AFF13241F121FB100106280 /* PaddingLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				2CDABCE91EBD7DE000719D72 /* CategoryListCell.swift in Sources */,
 				2C949C4B1EC8508600D7547E /* NotificationManager.swift in Sources */,
 				2CDABCEB1EBD864F00719D72 /* AddNewCategoryViewController.swift in Sources */,
+				9AFF13251F121FB100106280 /* PaddingLabel.swift in Sources */,
 				2C57EB661EBDBD9F000D6D96 /* TodoCategory.swift in Sources */,
 				2CDABCD71EBC1BE300719D72 /* CategoryListViewController.swift in Sources */,
 				2CBE4D861EBF30F900DF19E3 /* UpdateTaskViewController.swift in Sources */,
