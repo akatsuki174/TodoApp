@@ -3,7 +3,6 @@ disabled_rules:
   - force_try
   - trailing_whitespace
   - line_length
-  - control_statement
   - trailing_newline
   - for_where
   - redundant_string_enum_value
