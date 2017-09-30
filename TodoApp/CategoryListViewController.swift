@@ -12,7 +12,7 @@ import RealmSwift
 class CategoryListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var todoCategories:Results<TodoCategory>?
+    var todoCategories: Results<TodoCategory>?
     
     // MARK: - Life Cycle
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdateTaskViewController : UIViewController {
+class UpdateTaskViewController: UIViewController {
     
     @IBOutlet weak var taskNameTextField: UITextField!    
     @IBOutlet weak var memoTextView: UITextView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewCategoryViewController : UIViewController {
+class AddNewCategoryViewController: UIViewController {
     
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryNameTextField: UITextField!

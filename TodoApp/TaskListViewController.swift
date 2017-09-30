@@ -12,7 +12,7 @@ import RealmSwift
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var todoTasks:List<TodoTask>?
+    var todoTasks: List<TodoTask>?
     var todoCategory: TodoCategory!
     
     // MARK: - Life Cycle
