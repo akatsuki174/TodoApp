@@ -65,6 +65,6 @@ class NotificationManager {
 }
 
 enum PushType: String {
-    case theDayBefore = "theDayBefore"
-    case theDay = "theDay"
+    case theDayBefore
+    case theDay
 }
