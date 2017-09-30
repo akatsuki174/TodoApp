@@ -105,11 +105,11 @@ class UpdateTaskViewController: UIViewController {
     
     // MARK: - UIPickerView
     
-    @objc private func tappedOK(){
+    @objc private func tappedOK() {
         limitDateTextField.resignFirstResponder()
     }
     
-    @objc private func tappedNotSet(){
+    @objc private func tappedNotSet() {
         limitDateTextField.text = ""
         limitDateTextField.resignFirstResponder()
     }

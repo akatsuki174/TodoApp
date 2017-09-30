@@ -10,7 +10,6 @@ disabled_rules:
   - closure_parameter_position
   - vertical_whitespace
   - unused_closure_parameter
-  - opening_brace
   - unused_optional_binding
 opt_in_rules:
 included: 
