@@ -6,7 +6,6 @@ disabled_rules:
   - for_where
   - redundant_string_enum_value
   - legacy_constructor
-  - unused_closure_parameter
   - unused_optional_binding
 opt_in_rules:
 included: 
