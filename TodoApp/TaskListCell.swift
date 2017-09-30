@@ -15,7 +15,7 @@ class TaskListCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        limitLabel.insets = UIEdgeInsetsMake(3, 3, 3, 3)
+        limitLabel.insets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
