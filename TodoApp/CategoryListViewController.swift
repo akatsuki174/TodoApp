@@ -85,4 +85,3 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     }
 
 }
-
