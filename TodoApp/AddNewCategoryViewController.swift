@@ -9,41 +9,41 @@
 import UIKit
 
 class AddNewCategoryViewController: UIViewController {
-    
+
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryNameTextField: UITextField!
-    
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: - IBAction
-    
+
     @IBAction func tappedCloseBtn(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
+
     @IBAction func tappedAddBtn(_ sender: Any) {
-        
+
         if !validCategory() {
             return
         }
         let todoCategory = TodoCategory()
         todoCategory.name = categoryNameTextField.text!
-        
+
         RealmManager.updateCategoryData(todoCategory: todoCategory)
-        
+
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - 
-    
+
+    // MARK: -
+
     private func validCategory() -> Bool {
         guard let categoryName = categoryNameTextField.text, !categoryName.isEmpty else {
             let alert = UIAlertController.singleBtnAlert(title: "", message: "カテゴリ名を入力して下さい", completion: nil)
@@ -58,5 +58,5 @@ class AddNewCategoryViewController: UIViewController {
         }
         return true
     }
-    
+
 }

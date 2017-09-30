@@ -9,16 +9,16 @@
 import UIKit
 
 class UpdateTaskViewController: UIViewController {
-    
-    @IBOutlet weak var taskNameTextField: UITextField!    
+
+    @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var limitDateTextField: UITextField!
     private var toolBar: UIToolbar!
     var todoCategory: TodoCategory!
     var todoTask: TodoTask?
-    
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         memoTextView.layer.borderColor = UIColor(red: 229/255.0, green: 229/255.0, blue: 229/255.0, alpha: 1.0).cgColor
@@ -26,17 +26,17 @@ class UpdateTaskViewController: UIViewController {
         setupNaviBarBtn()
         setupTaskInfo()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: - Tap Action
-    
+
     @objc private func clickedLeftBtn(_ sender: Any) {
         goPreviousVC()
     }
-    
+
     @objc private func clickedRightBtn(_ sender: Any) {
         if !validCategory() {
             return
@@ -44,7 +44,7 @@ class UpdateTaskViewController: UIViewController {
         updateTodoTask()
         goPreviousVC()
     }
-    
+
     private func goPreviousVC () {
         if todoTask == nil {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -52,9 +52,9 @@ class UpdateTaskViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
+
     // MARK: -
-    
+
     private func validCategory() -> Bool {
         guard let taskName = taskNameTextField.text, !taskName.isEmpty else {
             let alert = UIAlertController.singleBtnAlert(title: "", message: "タスク名を入力して下さい", completion: nil)
@@ -63,7 +63,7 @@ class UpdateTaskViewController: UIViewController {
         }
         return true
     }
-    
+
     private func updateTodoTask() {
         let todoTask = TodoTask()
         if let id = self.todoTask?.id {
@@ -73,7 +73,7 @@ class UpdateTaskViewController: UIViewController {
         todoTask.category = todoCategory
         todoTask.memo = memoTextView.text
         todoTask.limitDate = DateUtils.dateFromString(string: limitDateTextField.text ?? "")
-        
+
         if self.todoTask == nil {
             RealmManager.insertTaskData(todoCategory: todoCategory, todoTask: todoTask)
             NotificationManager.registerRemainderPush(todoTask: todoTask)
@@ -83,7 +83,7 @@ class UpdateTaskViewController: UIViewController {
             NotificationManager.registerRemainderPush(todoTask: todoTask)
         }
     }
-    
+
     private func setupNaviBarBtn() {
         if todoTask == nil {
             self.title = "新規タスク"
@@ -94,7 +94,7 @@ class UpdateTaskViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(UpdateTaskViewController.clickedRightBtn(_:)))
         }
     }
-    
+
     private func setupTaskInfo() {
         if todoTask != nil {
             taskNameTextField.text = todoTask?.name
@@ -102,32 +102,32 @@ class UpdateTaskViewController: UIViewController {
             limitDateTextField.text = todoTask?.limitDate != nil ? DateUtils.stringFromDate(date: (todoTask?.limitDate)!) : ""
         }
     }
-    
+
     // MARK: - UIPickerView
-    
+
     @objc private func tappedOK() {
         limitDateTextField.resignFirstResponder()
     }
-    
+
     @objc private func tappedNotSet() {
         limitDateTextField.text = ""
         limitDateTextField.resignFirstResponder()
     }
-    
+
     private func setupPickerView() {
         toolBar = UIToolbar()
         toolBar.sizeToFit()
         let okBtn = UIBarButtonItem(title: "設定する", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedOK))
         let notSetBtn = UIBarButtonItem(title: "設定しない", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedNotSet))
         toolBar.items = [okBtn, notSetBtn]
-        
+
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date
         datePickerView.addTarget(self, action: #selector(UpdateTaskViewController.datePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
         limitDateTextField.inputView = datePickerView
         limitDateTextField.inputAccessoryView = toolBar
     }
-    
+
     @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
         limitDateTextField.text = DateUtils.stringFromDate(date: sender.date)
     }

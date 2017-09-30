@@ -17,7 +17,7 @@ class NotificationManager {
         let theDayPushDate = NotificationManager.calculateFireDate(date: limitDate, type: .theDay)
         let application = UIApplication.shared
         let now = Date()
-        
+
         if theDayBeforePushDate.compare(now) == .orderedDescending {
             // 前日プッシュ
             let theDayBeforeNotif = UILocalNotification()
@@ -38,7 +38,7 @@ class NotificationManager {
             application.scheduleLocalNotification(theDayNotif)
         }
     }
-    
+
     class func deleteRemainderPush(todoTask: TodoTask) {
         guard let notifications = UIApplication.shared.scheduledLocalNotifications else {
             return
@@ -49,7 +49,7 @@ class NotificationManager {
             }
         }
     }
-    
+
     class func calculateFireDate(date: Date, type: PushType) -> Date {
         let calender = Calendar(identifier: Calendar.Identifier.gregorian)
         var comps = calender.dateComponents([.year, .month, .day, .hour], from: date)

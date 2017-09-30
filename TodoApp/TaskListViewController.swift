@@ -14,19 +14,19 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var todoTasks: List<TodoTask>?
     var todoCategory: TodoCategory!
-    
+
     // MARK: - Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "「\(todoCategory.name)」カテゴリ"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "TaskListCell")
-        
+
         todoTasks = todoCategory.tasks
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -35,17 +35,17 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             tableView.deselectRow(at: selectedRow, animated: true)
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: - UITableViewDataSource
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoTasks?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
         let todoTask = todoTasks?[indexPath.row]
@@ -58,7 +58,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = todoTasks![indexPath.row]
@@ -70,20 +70,20 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
+
     // MARK: - UITableViewDelegate
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "tappedTask", sender: todoTasks?[indexPath.row])
     }
-    
-    
+
+
     // MARK: -
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
         if identifier == "tappedTask" {
@@ -106,7 +106,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         var nowComp = calender.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
         nowComp.hour = 0
         nowComp.minute = 0
-        
+
         let diffComp = calender.dateComponents([.day], from: calender.date(from: nowComp)!, to: limitDate)
         if diffComp.day! <= 0 {
             // 期限当日、もしくは過ぎていたら赤
@@ -115,7 +115,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             // 期限前日なら黄色
             return UIColor(red: 255/255.0, green: 241/255.0, blue: 15/255.0, alpha: 1.0)
         }
-        
+
         return UIColor.clear
     }
 }

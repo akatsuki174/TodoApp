@@ -17,7 +17,7 @@ class TodoTask: Object {
     @objc dynamic var category: TodoCategory?
     @objc dynamic var limitDate: Date?
     @objc dynamic var createdDate: Date = Date()
-    
+
     convenience init(name: String, memo: String?, category: TodoCategory?, limitDate: Date?) {
         self.init()
         self.name = name
@@ -25,7 +25,7 @@ class TodoTask: Object {
         self.category = category
         self.limitDate = limitDate
     }
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }
