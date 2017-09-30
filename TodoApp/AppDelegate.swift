@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if let notification = launchOptions?[UIApplicationLaunchOptionsKey.localNotification] as? UILocalNotification, let _ = notification.userInfo {
+        if let notification = launchOptions?[UIApplicationLaunchOptionsKey.localNotification] as? UILocalNotification, notification.userInfo != nil {
             application.applicationIconBadgeNumber = 0
             application.cancelLocalNotification(notification)
         }
