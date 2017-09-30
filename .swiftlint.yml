@@ -1,0 +1,23 @@
+disabled_rules:
+  - force_cast
+  - force_try
+  - trailing_whitespace
+  - line_length
+  - comma
+  - control_statement
+  - trailing_newline
+  - for_where
+  - redundant_string_enum_value
+  - legacy_constructor
+  - closure_parameter_position
+  - vertical_whitespace
+  - colon
+  - unused_closure_parameter
+  - opening_brace
+  - identifier_name
+  - unused_optional_binding
+opt_in_rules:
+included: 
+  - TodoApp
+excluded: 
+  - Carthage

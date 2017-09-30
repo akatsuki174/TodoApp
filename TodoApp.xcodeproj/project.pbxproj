@@ -156,7 +156,8 @@
 				2CDABCCD1EBC1BE300719D72 /* Sources */,
 				2CDABCCE1EBC1BE300719D72 /* Frameworks */,
 				2CDABCCF1EBC1BE300719D72 /* Resources */,
-				2CDABCF31EBDB5A300719D72 /* ShellScript */,
+				2CDABCF31EBDB5A300719D72 /* Run Script(Carthage) */,
+				E3856B0A1F7FA5C000B3368D /* Run Script(SwiftLint) */,
 			);
 			buildRules = (
 			);
@@ -219,7 +220,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2CDABCF31EBDB5A300719D72 /* ShellScript */ = {
+		2CDABCF31EBDB5A300719D72 /* Run Script(Carthage) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,11 +229,26 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
+			name = "Run Script(Carthage)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		E3856B0A1F7FA5C000B3368D /* Run Script(SwiftLint) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script(SwiftLint)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
