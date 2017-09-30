@@ -11,10 +11,13 @@ disabled_rules:
   - vertical_whitespace
   - unused_closure_parameter
   - opening_brace
-  - identifier_name
   - unused_optional_binding
 opt_in_rules:
 included: 
   - TodoApp
 excluded: 
   - Carthage
+identifier_name:
+  excluded:
+    - id
+    - vc
