@@ -11,12 +11,12 @@ import RealmSwift
 
 class TodoTask: Object {
 
-    dynamic var id: String = UUID().uuidString
-    dynamic var name: String = ""
-    dynamic var memo: String?
-    dynamic var category: TodoCategory?
-    dynamic var limitDate: Date?
-    dynamic var createdDate: Date = Date()
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var name: String = ""
+    @objc dynamic var memo: String?
+    @objc dynamic var category: TodoCategory?
+    @objc dynamic var limitDate: Date?
+    @objc dynamic var createdDate: Date = Date()
     
     convenience init(name: String, memo: String?, category: TodoCategory?, limitDate: Date?) {
         self.init()
