@@ -81,7 +81,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         performSegue(withIdentifier: "tappedTask", sender: todoTasks?[indexPath.row])
     }
 
-
     // MARK: -
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
