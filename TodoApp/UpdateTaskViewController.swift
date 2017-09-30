@@ -119,7 +119,7 @@ class UpdateTaskViewController: UIViewController {
         toolBar.sizeToFit()
         let okBtn = UIBarButtonItem(title: "設定する", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedOK))
         let notSetBtn = UIBarButtonItem(title: "設定しない", style: .plain, target: self, action: #selector(UpdateTaskViewController.tappedNotSet))
-        toolBar.items = [okBtn,notSetBtn]
+        toolBar.items = [okBtn, notSetBtn]
         
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date

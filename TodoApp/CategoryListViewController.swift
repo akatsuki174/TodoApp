@@ -72,7 +72,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "tappedCategory",sender: todoCategories?[indexPath.row])
+        performSegue(withIdentifier: "tappedCategory", sender: todoCategories?[indexPath.row])
     }
     
     // MARK: - 
