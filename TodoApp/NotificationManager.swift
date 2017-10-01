@@ -43,10 +43,8 @@ class NotificationManager {
         guard let notifications = UIApplication.shared.scheduledLocalNotifications else {
             return
         }
-        for notif in notifications {
-            if notif.userInfo?["id"] as! String == todoTask.id {
-                UIApplication.shared.cancelLocalNotification(notif)
-            }
+        for notif in notifications where notif.userInfo?["id"] as! String == todoTask.id {
+            UIApplication.shared.cancelLocalNotification(notif)
         }
     }
 

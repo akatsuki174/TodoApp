@@ -2,7 +2,6 @@ disabled_rules:
   - force_cast
   - force_try
   - line_length
-  - for_where
 opt_in_rules:
 included: 
   - TodoApp
