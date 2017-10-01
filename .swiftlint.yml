@@ -4,6 +4,7 @@ disabled_rules:
 opt_in_rules:
   - attributes
   - block_based_kvo
+  - closure_end_indentation
 included: 
   - TodoApp
 excluded: 
