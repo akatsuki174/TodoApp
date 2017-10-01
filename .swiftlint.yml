@@ -3,6 +3,7 @@ disabled_rules:
   - line_length
 opt_in_rules:
   - attributes
+  - block_based_kvo
 included: 
   - TodoApp
 excluded: 
