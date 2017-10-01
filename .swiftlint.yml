@@ -5,6 +5,7 @@ opt_in_rules:
   - attributes
   - block_based_kvo
   - closure_end_indentation
+  - closure_spacing
 included: 
   - TodoApp
 excluded: 
