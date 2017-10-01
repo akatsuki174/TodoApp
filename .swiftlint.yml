@@ -6,6 +6,7 @@ opt_in_rules:
   - block_based_kvo
   - closure_end_indentation
   - closure_spacing
+  - fatal_error_message
 included: 
   - TodoApp
 excluded: 
