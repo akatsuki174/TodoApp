@@ -2,6 +2,7 @@ disabled_rules:
   - force_try
   - line_length
 opt_in_rules:
+  - attributes
 included: 
   - TodoApp
 excluded: 

@@ -33,11 +33,13 @@ class UpdateTaskViewController: UIViewController {
 
     // MARK: - Tap Action
 
-    @objc private func clickedLeftBtn(_ sender: Any) {
+    @objc
+    private func clickedLeftBtn(_ sender: Any) {
         goPreviousVC()
     }
 
-    @objc private func clickedRightBtn(_ sender: Any) {
+    @objc
+    private func clickedRightBtn(_ sender: Any) {
         if !validCategory() {
             return
         }
@@ -105,11 +107,13 @@ class UpdateTaskViewController: UIViewController {
 
     // MARK: - UIPickerView
 
-    @objc private func tappedOK() {
+    @objc
+    private func tappedOK() {
         limitDateTextField.resignFirstResponder()
     }
 
-    @objc private func tappedNotSet() {
+    @objc
+    private func tappedNotSet() {
         limitDateTextField.text = ""
         limitDateTextField.resignFirstResponder()
     }
@@ -128,7 +132,8 @@ class UpdateTaskViewController: UIViewController {
         limitDateTextField.inputAccessoryView = toolBar
     }
 
-    @objc private func datePickerValueChanged(_ sender: UIDatePicker) {
+    @objc
+    private func datePickerValueChanged(_ sender: UIDatePicker) {
         limitDateTextField.text = DateUtils.stringFromDate(date: sender.date)
     }
 }
