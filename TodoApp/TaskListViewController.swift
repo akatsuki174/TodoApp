@@ -47,6 +47,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListCell", for: indexPath) as! TaskListCell
         let todoTask = todoTasks?[indexPath.row]
         if let task = todoTask {

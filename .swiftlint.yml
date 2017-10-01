@@ -1,5 +1,4 @@
 disabled_rules:
-  - force_cast
   - force_try
   - line_length
 opt_in_rules:

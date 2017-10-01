@@ -46,6 +46,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryListCell", for: indexPath) as! CategoryListCell
         let todoCategory = todoCategories?[indexPath.row]
         if let category = todoCategory {
@@ -79,6 +80,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tappedCategory" {
+            // swiftlint:disable force_cast
             let nextVC = segue.destination as! TaskListViewController
             nextVC.todoCategory = sender as? TodoCategory
         }
