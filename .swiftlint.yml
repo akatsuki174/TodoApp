@@ -7,6 +7,7 @@ opt_in_rules:
   - closure_end_indentation
   - closure_spacing
   - fatal_error_message
+  - file_header
 included: 
   - TodoApp
 excluded: 

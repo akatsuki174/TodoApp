@@ -1,11 +1,3 @@
-//
-//  PaddingLabel.swift
-//  TodoApp
-//
-//  Created by akatsuki174 on 2017/07/09.
-//  Copyright © 2017年 akatsuki174. All rights reserved.
-//
-
 import UIKit
 
 class PaddingLabel: UILabel {

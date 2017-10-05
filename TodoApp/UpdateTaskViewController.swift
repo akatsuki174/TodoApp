@@ -1,11 +1,3 @@
-//
-//  UpdateTaskViewController.swift
-//  TodoApp
-//
-//  Created by akatsuki174 on 2017/05/07.
-//  Copyright © 2017年 akatsuki174. All rights reserved.
-//
-
 import UIKit
 
 class UpdateTaskViewController: UIViewController {

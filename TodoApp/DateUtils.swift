@@ -1,11 +1,3 @@
-//
-//  DateUtils.swift
-//  TodoApp
-//
-//  Created by akatsuki174 on 2017/05/13.
-//  Copyright © 2017年 akatsuki174. All rights reserved.
-//
-
 import UIKit
 
 class DateUtils {

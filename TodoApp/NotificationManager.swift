@@ -1,11 +1,3 @@
-//
-//  NotificationManager.swift
-//  TodoApp
-//
-//  Created by akatsuki174 on 2017/05/14.
-//  Copyright © 2017年 akatsuki174. All rights reserved.
-//
-
 import UIKit
 
 class NotificationManager {
