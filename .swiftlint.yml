@@ -8,6 +8,7 @@ opt_in_rules:
   - closure_spacing
   - fatal_error_message
   - file_header
+  - first_where
 included: 
   - TodoApp
 excluded: 
