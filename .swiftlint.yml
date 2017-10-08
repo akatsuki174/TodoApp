@@ -9,6 +9,7 @@ opt_in_rules:
   - fatal_error_message
   - file_header
   - first_where
+  - implicit_return
 included: 
   - TodoApp
 excluded: 
