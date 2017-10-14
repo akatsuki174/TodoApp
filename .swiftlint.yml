@@ -10,6 +10,7 @@ opt_in_rules:
   - file_header
   - first_where
   - implicit_return
+  - redundant_nil_coalescing
 included: 
   - TodoApp
 excluded: 
